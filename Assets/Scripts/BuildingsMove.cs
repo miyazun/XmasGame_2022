@@ -1,6 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class BuildingsMove : MonoBehaviour
 {
@@ -18,15 +19,19 @@ public class BuildingsMove : MonoBehaviour
         trees = this.gameObject.transform;
         rb = GetComponent<Rigidbody2D>();
         startPosition = gameObject.transform.position;
+        var move = Observable.EveryUpdate().Subscribe(_ => MoveBuilding()).AddTo(this);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void MoveBuilding()
     {
         rb.velocity = new Vector3(-speed, 0.0f, 0.0f);
         if (trees.position.x <= back)
         {
             trees.position = startPosition;
         }
+
     }
+
+
+
 }
