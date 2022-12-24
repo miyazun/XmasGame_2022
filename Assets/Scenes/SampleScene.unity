@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   note: {fileID: 8197881026435332770, guid: 7ac9419e995d74641a3ffa2ef8fe4699, type: 3}
-  startPosition: {x: 3, y: 3.6}
+  startPosition: {x: 10, y: 3.6}
 --- !u!4 &526564779
 Transform:
   m_ObjectHideFlags: 0
@@ -566,8 +566,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteFilter:
-    note: 3
-    octave: 0
+    note: 12
+    octave: 7
   noteOnEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1487,7 +1487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   note: {fileID: 8139031023149433602, guid: 3e5e497a15c0c744b88bb981e766ee67, type: 3}
-  startPosition: {x: 3, y: 0}
+  startPosition: {x: 10, y: 0}
 --- !u!4 &2076603131
 Transform:
   m_ObjectHideFlags: 0
