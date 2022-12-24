@@ -507,6 +507,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &526564777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 526564779}
+  - component: {fileID: 526564778}
+  - component: {fileID: 526564780}
+  m_Layer: 0
+  m_Name: PresentCreater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &526564778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526564777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11d9902a9d0ee447b31cb7d1d9c49c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: {fileID: 8197881026435332770, guid: 7ac9419e995d74641a3ffa2ef8fe4699, type: 3}
+  startPosition: {x: 3, y: 3.6}
+--- !u!4 &526564779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526564777}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9144504, y: 2.8642657, z: -2.3338199}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &526564780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526564777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 390e5cebc37d6d7258bdb58f0380f9d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteFilter:
+    note: 3
+    octave: 0
+  noteOnEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 526564778}
+        m_TargetAssemblyTypeName: NoteCreater, Assembly-CSharp
+        m_MethodName: CreateNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  noteOffEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &646862239
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,18 +895,24 @@ PlayableDirector:
   m_GameObject: {fileID: 880038541}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 169a67abac553854eb886129d5967682, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 031ecd2b1aa39e94fbc5894e4b6998cf, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 8177001023019775135, guid: 169a67abac553854eb886129d5967682, type: 2}
+  - key: {fileID: -6456192301756179159, guid: 031ecd2b1aa39e94fbc5894e4b6998cf, type: 2}
     value: {fileID: 0}
-  - key: {fileID: -7261499182652670402, guid: 169a67abac553854eb886129d5967682, type: 2}
-    value: {fileID: 2076603129}
+  - key: {fileID: 9086138797872084006, guid: 031ecd2b1aa39e94fbc5894e4b6998cf, type: 2}
+    value: {fileID: 2076603128}
+  - key: {fileID: -1045949726065278826, guid: 031ecd2b1aa39e94fbc5894e4b6998cf, type: 2}
+    value: {fileID: 2076603128}
+  - key: {fileID: -4376456617308825835, guid: 031ecd2b1aa39e94fbc5894e4b6998cf, type: 2}
+    value: {fileID: 526564777}
   m_ExposedReferences:
-    m_References: []
+    m_References:
+    - c7e2e98503c56dd47a686d948e5b022e: {fileID: 2076603128}
+    - 517cf3b231ae8e3488f9a430f6369c9a: {fileID: 2076603128}
 --- !u!4 &880038543
 Transform:
   m_ObjectHideFlags: 0
@@ -1381,7 +1466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2076603131}
   - component: {fileID: 2076603130}
-  - component: {fileID: 2076603129}
+  - component: {fileID: 2076603132}
   m_Layer: 0
   m_Name: BellCreater
   m_TagString: Untagged
@@ -1389,36 +1474,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2076603129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076603128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 3d38855c2a4d67e4783492bbc9653456, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2076603130}
-          m_TargetAssemblyTypeName: NoteCreater, Assembly-CSharp
-          m_MethodName: CreateNote
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &2076603130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,7 +1487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   note: {fileID: 8139031023149433602, guid: 3e5e497a15c0c744b88bb981e766ee67, type: 3}
-  startPosition: {x: 15, y: 0}
+  startPosition: {x: 3, y: 0}
 --- !u!4 &2076603131
 Transform:
   m_ObjectHideFlags: 0
@@ -1447,6 +1502,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2076603132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076603128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 390e5cebc37d6d7258bdb58f0380f9d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteFilter:
+    note: 0
+    octave: 0
+  noteOnEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2076603130}
+        m_TargetAssemblyTypeName: NoteCreater, Assembly-CSharp
+        m_MethodName: CreateNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  noteOffEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &8371959652209529781
 PrefabInstance:
   m_ObjectHideFlags: 0
