@@ -32,7 +32,7 @@ public class NotesMove : MonoBehaviour
     }
     private void ComputeSpeed()
     {
-        speed = distance / ((60 / bpm) * section);
+        speed = distance / ((60.0f / bpm) * section);
     }
 
 }
