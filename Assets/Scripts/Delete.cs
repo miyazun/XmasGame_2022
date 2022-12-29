@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class Delete : MonoBehaviour
 {
-    private Test test;
+    private HasPresents hasPresents;
 
     void Start()
     {
-        test = GameObject.Find("Text").GetComponent<Test>();
+        hasPresents = GameObject.Find("SantaHasPresents").GetComponent<HasPresents>();
     }
+
     public void DeleteObj(string name)
     {
         if (name == "miss")
@@ -21,13 +22,13 @@ public class Delete : MonoBehaviour
         else if (name == "present")
         {
             Debug.Log("pre");
+            hasPresents.GetPresent();
             Destroy(gameObject);
         }
         else
         {
             Debug.Log("other");
             Destroy(this.gameObject);
-            test.Plus();
         }
         Destroy(gameObject);
     }

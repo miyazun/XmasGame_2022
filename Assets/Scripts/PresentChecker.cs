@@ -1,7 +1,7 @@
 using UnityEngine;
 using UniRx;
 
-public class NotesChecker : MonoBehaviour
+public class PresentChecker : MonoBehaviour
 {
     private bool isNote;
     private GameObject otherNote;
@@ -21,20 +21,11 @@ public class NotesChecker : MonoBehaviour
     {
         isNote = true;
         otherNote = other.gameObject;
-        /*if (Input.GetKeyDown(checkKey))
-        {
-            Destroy(other.gameObject);
-        }*/
-
     }
     private void OnTriggerStay2D(Collider2D other)
     {
         isNote = true;
         otherNote = other.gameObject;
-        /*if (Input.GetKeyDown(checkKey))
-        {
-            Destroy(other.gameObject);
-        }*/
     }
     private void OnTriggerExit2D(Collider2D other)
     {
