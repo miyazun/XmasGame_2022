@@ -12,6 +12,8 @@ public class NotesMove : MonoBehaviour
     private float section;
     [SerializeField]
     private float distance;
+    [SerializeField]
+    private Delete delete;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class NotesMove : MonoBehaviour
 
     public void Delete()
     {
-        Destroy(this.gameObject);
+        delete.DeleteObj("miss");
     }
     private void ComputeSpeed()
     {

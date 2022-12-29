@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7903844262839855937}
   - component: {fileID: 4998896985490887911}
   - component: {fileID: -952943086809521230}
+  - component: {fileID: 7392632312283309833}
   m_Layer: 0
   m_Name: present
-  m_TagString: Untagged
+  m_TagString: present
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +101,8 @@ MonoBehaviour:
   over: -15
   bpm: 178
   section: 4
-  distance: 10
+  distance: 9
+  delete: {fileID: 7392632312283309833}
 --- !u!61 &4998896985490887911
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -111,7 +113,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -148,3 +150,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7392632312283309833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8197881026435332770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c431009b0d3abe348b643a219481bcb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
