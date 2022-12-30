@@ -8,6 +8,7 @@ public class PresentChecker : MonoBehaviour
     [SerializeField]
     private KeyCode checkKey;
 
+
     void Start()
     {
         isNote = false;

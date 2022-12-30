@@ -163,3 +163,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missArea: 0.65
+  presentEffect: {fileID: 4909607287955421722, guid: ee5ef0ba1393296459a5a96535a7eb66, type: 3}
+  getEffect: {fileID: 2058451882523107821, guid: e755ff5b2e6406b4db84c3e708709f2b, type: 3}
