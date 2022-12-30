@@ -48,7 +48,7 @@ public class GameText : MonoBehaviour
         {
             comboText.enabled = true;
         }
-        comboText.text = num.ToString() + "combo!";
+        comboText.text = num.ToString() + "コンボ!";
         activeTime = 2.0f;
     }
     private void ComboAcrive()
