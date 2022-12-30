@@ -15,8 +15,9 @@ public class Delete : MonoBehaviour
         hasPresents = GameObject.Find("SantaHasPresents").GetComponent<HasPresents>();
     }
 
-    public void DeleteObj(string name)
+    public bool DeleteObj(string name)
     {
+        bool success = false;
         if (gameObject.transform.position.x >= Mathf.Abs(missArea))
         {
             name = "miss";
@@ -32,20 +33,23 @@ public class Delete : MonoBehaviour
             {
                 Debug.Log("miss by other");
             }
+            success = false;
         }
         else if (name == "present")
         {
             Debug.Log("pre");
             Instantiate(presentEffect, new Vector2(0.0f, 3.6f), Quaternion.identity);
             hasPresents.GetPresent();
+            success = false;
         }
         else
         {
             Debug.Log("other");
             Instantiate(getEffect, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            success = true;
         }
         Destroy(gameObject);
+        return success;
     }
 
 }

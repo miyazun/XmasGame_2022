@@ -4,21 +4,24 @@ using UniRx;
 public class BellChecker : MonoBehaviour
 {
     private bool isNote;
+    private bool success;
     private GameObject otherNote;
     [SerializeField]
     private KeyCode checkKey;
     [SerializeField]
     private HasPresents hasPresents;
+    [SerializeField]
+    private Success successCheck;
 
     void Start()
     {
         isNote = false;
-        var key = Observable.EveryUpdate()
+        /*var key = Observable.EveryUpdate()
                   .Where(_ => hasPresents.presents.Value > 0 && (Input.GetKeyDown(checkKey) && isNote))
-                  .Subscribe(_ => DeleteOther());
+                  .Subscribe(_ => DeleteOther());*/
         var givePresent = Observable.EveryUpdate()
           .Where(_ => Input.GetKeyDown(checkKey) && hasPresents.presents.Value > 0)
-          .Subscribe(_ => hasPresents.GivePresent());
+          .Subscribe(_ => checkNote());
     }
 
 
@@ -37,8 +40,22 @@ public class BellChecker : MonoBehaviour
         isNote = false;
     }
 
+    private void checkNote()
+    {
+        hasPresents.GivePresent();
+        success = false;
+        if (isNote)
+        {
+            DeleteOther();
+        }
+        successCheck.CreateGivePresent(success);
+    }
+
     private void DeleteOther()
     {
-        otherNote.GetComponent<Delete>().DeleteObj(otherNote.tag);
+        if (otherNote.GetComponent<Delete>().DeleteObj(otherNote.tag))
+        {
+            success = true;
+        }
     }
 }
