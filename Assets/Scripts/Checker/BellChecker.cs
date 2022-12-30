@@ -16,6 +16,7 @@ public class BellChecker : MonoBehaviour
     void Start()
     {
         isNote = false;
+        success = false;
         /*var key = Observable.EveryUpdate()
                   .Where(_ => hasPresents.presents.Value > 0 && (Input.GetKeyDown(checkKey) && isNote))
                   .Subscribe(_ => DeleteOther());*/

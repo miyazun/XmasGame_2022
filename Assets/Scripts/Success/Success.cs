@@ -8,6 +8,7 @@ public class Success : MonoBehaviour
     private GameObject givePresents;
     [SerializeField]
     private Vector2 startPos;
+
     public void CreateGivePresent(bool check)
     {
         Debug.Log(check);

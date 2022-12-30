@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public ReactiveProperty<int> combo = new ReactiveProperty<int>();
+    public ReactiveProperty<int> points = new ReactiveProperty<int>();
+
     void Start()
     {
-        
+        combo.Value = 0;
+        points.Value = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddCombo()
     {
-        
+        combo.Value++;
     }
+
+    public void ComboZero()
+    {
+        combo.Value = 0;
+    }
+
+    public void AddPoints(int num)
+    {
+        points.Value += num;
+    }
+
 }
