@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Delete : MonoBehaviour
 {
+    [SerializeField]
+    private float missArea;
     private HasPresents hasPresents;
 
     void Start()
@@ -11,19 +13,26 @@ public class Delete : MonoBehaviour
 
     public void DeleteObj(string name)
     {
+        if (gameObject.transform.position.x >= Mathf.Abs(missArea))
+        {
+            name = "miss";
+        }
+
         if (name == "miss")
         {
             if (tag == "bell")
             {
-                Debug.Log("miss");
+                Debug.Log("miss By Bell");
             }
-            Destroy(gameObject);
+            else
+            {
+                Debug.Log("miss by other");
+            }
         }
         else if (name == "present")
         {
             Debug.Log("pre");
             hasPresents.GetPresent();
-            Destroy(gameObject);
         }
         else
         {
