@@ -18,7 +18,7 @@ public class IlluminationController : MonoBehaviour
         var changeIllumination = Observable
                                 .EveryUpdate()
                                 .ThrottleFirst(TimeSpan.FromSeconds(1))
-                                .Subscribe(_ => ChangeImage());
+                                .Subscribe(_ => ChangeImage()).AddTo(this);
     }
 
     private void ChangeImage()

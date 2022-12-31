@@ -29,7 +29,7 @@ public class GameText : MonoBehaviour
         gameManager.combo
         .Subscribe(num => UpdateComboCounter(num)).AddTo(this);
         var active = Observable.EveryUpdate()
-                     .Subscribe(_ => ComboAcrive());
+                     .Subscribe(_ => ComboAcrive()).AddTo(this);
     }
 
     private void UpdatePresentCounter(int num)

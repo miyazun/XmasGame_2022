@@ -31,24 +31,24 @@ public class Delete : MonoBehaviour
         {
             if (tag == "bell")
             {
-                Debug.Log("miss By Bell");
+                //Debug.Log("miss By Bell");
             }
             else
             {
-                Debug.Log("miss by other");
+                //Debug.Log("miss by other");
             }
             success = false;
         }
         else if (name == "present")
         {
-            Debug.Log("pre");
+            //Debug.Log("pre");
             Instantiate(presentEffect, new Vector2(0.0f, 3.6f), Quaternion.identity);
             hasPresents.GetPresent();
             success = false;
         }
         else
         {
-            Debug.Log("other");
+            //Debug.Log("other");
             gameManager.AddCombo();
             comboCalculator.CalculatoPoints();
             Instantiate(getEffect, transform.position, Quaternion.identity);

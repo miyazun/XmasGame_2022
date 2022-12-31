@@ -13,8 +13,8 @@ public class PresentChecker : MonoBehaviour
     {
         isNote = false;
         var key = Observable.EveryUpdate()
-                  .Where(_ => Input.GetKeyDown(checkKey) && isNote)
-                  .Subscribe(_ => DeleteOther());
+                  .Where(_ => (Input.GetKeyDown(checkKey) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.K)) && isNote)
+                  .Subscribe(_ => DeleteOther()).AddTo(this);
     }
 
 
