@@ -11,7 +11,7 @@ public class BagController : MonoBehaviour
     void Start()
     {
         hasPresents.presents
-        .Subscribe(num => BagSize(num));
+        .Subscribe(num => BagSize(num)).AddTo(this);
     }
 
     private void BagSize(int num)

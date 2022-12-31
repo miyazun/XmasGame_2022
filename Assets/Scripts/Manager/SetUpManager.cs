@@ -13,7 +13,7 @@ public class SetUpManager : MonoBehaviour
     {
         var active = Observable.EveryUpdate()
                      .Where(_ => Input.GetKeyDown(KeyCode.Escape))
-                     .Subscribe(_ => ActiveSetUp());
+                     .Subscribe(_ => ActiveSetUp()).AddTo(this);
     }
 
     public void ActiveSetUp()
